@@ -29,7 +29,7 @@ function uploadContent(link)
 }
 
 window.addEventListener("popstate", function(e) {
-	PopUpHide();
 	uploadContent(e.state.href);									 
 	updateTitle(e.state.title);
+	PopUpHide();
 }, false );
