@@ -4,7 +4,7 @@ $(document).ready(function(){
 function PopUpShow(){
     $("#show").show();
 }
-function PopUpHide(){
+function PopUpHide();{
     $("#show").hide();
 }
 function followLink(event, link)
@@ -29,6 +29,7 @@ function uploadContent(link)
 }
 
 window.addEventListener("popstate", function(e) {
+	PopUpHide();
 	uploadContent(e.state.href);									 
 	updateTitle(e.state.title);
 }, false );
