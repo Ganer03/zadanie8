@@ -1,5 +1,15 @@
+$(document).ready(function(){ 
+    PopUpHide();
+});
+function PopUpShow(){
+    $("#show").show();
+}
+function PopUpHide(){
+    $("#show").hide();
+}
 function followLink(event, link)
 {
+	PopUpShow();
 	var nameLink = link.innerHTML;
 	uploadContent(link.href);
 	window.history.pushState({title:nameLink}, null, "form");
