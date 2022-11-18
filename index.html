@@ -10,7 +10,35 @@
 </head>
 <body>
     <a href="/one/" onclick="followLink(event, this)">первая страница</a>
-        
+    <div id="show">
+        <form class="ajaxForm popup" action="https://formcarry.com/s/b3fWQsb4k" method="POST" accept-charset="UTF-8">
+            <p><input type="button" value="✖"></p>
+            <label>
+                <input type="text" name="Name">
+                <div class="label__text">
+                    Имя:
+                </div>
+            </label>
+            <label>
+                <input type="email" name="email">
+                <div class="label__text">
+                    Email:
+                </div>
+            </label>
+            <label>
+                <textarea name="Message"></textarea>
+                <div class="label__text">
+                    Сообщение:
+                </div>
+            </label>
+						<p>Согласие с политикой обработки персональных данных</p>
+            <label class="custom-checkbox"> 
+                <input class="hidden-checkbox" type="checkbox">
+                
+            </label>
+            <button type="submit" name="formButton">Отправить</button>
+        </form>
+    </div>
      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
