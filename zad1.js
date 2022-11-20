@@ -1,5 +1,20 @@
+SaveLocalForm(){
+	var inputEmail= document.getElementById("email");
+	var inputName= document.getElementById("name");
+	var inputTxtArea= document.getElementById("textarea");
+	localStorage.setItem("email", inputEmail.value);
+	localStorage.setItem("name", inputName.value);
+	localStorage.setItem("textarea", inputTxtArea.value);
+}
+
 $(document).ready(function(){ 
     PopUpHide();
+    if(localStorage.getItem("email")){
+	    document.getElementById("email").innerHTML=localStorage.getItem("email");
+	    document.getElementById("name").innerHTML=localStorage.getItem("name");
+	    document.getElementById("textarea").innerHTML=localStorage.getItem("textarea");
+	    document.getElementById('checkbox').checked = true;
+    }
 });
 function PopUpShow(){
     $("#show").show();
@@ -29,6 +44,7 @@ function back(){
 
 
 $(".ajaxForm").submit(function(e){
+SaveLocalForm();
 e.preventDefault();
 var href = $(this).attr("action");
 $.ajax({
@@ -37,8 +53,12 @@ $.ajax({
     url: href,
     data: $(this).serialize(),
     success: function(response){
-	if( response.status == "success"){
-	    alert("We received your submission, thank you!");
+	if(($('#name').val().length === 0 || !$('#name').val().trim()) && $('#textarea').val().length != 0 && input[type="checkbox"].is(':checked') && response.status == "success"){
+		document.getElementById('name').value='';
+		document.getElementById('email').value='';
+		document.getElementById('textarea').value='';
+		document.getElementById('checkbox').removeAttribute('checked');
+		alert("We received your submission, thank you!");
 	}else{
 	    alert("An error occured: " + response.message);
 	}
