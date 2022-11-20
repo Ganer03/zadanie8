@@ -57,7 +57,7 @@ $.ajax({
 		document.getElementById('name').value='';
 		document.getElementById('email').value='';
 		document.getElementById('textarea').value='';
-		document.getElementById('checkbox').removeAttribute('checked');
+		document.getElementById('checkbox').checked = false;
 		alert("We received your submission, thank you!");
 	}else{
 	    alert("An error occured: " + response.message);
