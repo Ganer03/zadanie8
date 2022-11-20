@@ -7,14 +7,14 @@ SaveLocalForm(){
 	localStorage.setItem("textarea", inputTxtArea.value);
 }
 
-$(document).ready(function(){ 
-    PopUpHide();
-    if(localStorage.getItem("email")){
+$(document).ready(function(){
+     if(localStorage.getItem("email")){
 	    document.getElementById("email").innerHTML=localStorage.getItem("email");
 	    document.getElementById("name").innerHTML=localStorage.getItem("name");
 	    document.getElementById("textarea").innerHTML=localStorage.getItem("textarea");
 	    document.getElementById('checkbox').checked = true;
     }
+    PopUpHide();
 });
 function PopUpShow(){
     $("#show").show();
