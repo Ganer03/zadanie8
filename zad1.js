@@ -37,7 +37,7 @@ $(function(){
             url: href,
             data: $(this).serialize(),
             success: function(response){
-                if(response.status == "success"){
+                if(input[type="checkbox"].is(':checked') && response.status == "success"){
                     alert("We received your submission, thank you!");
                 }else{
                     alert("An error occured: " + response.message);
