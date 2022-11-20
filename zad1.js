@@ -21,6 +21,11 @@ function updateTitle(title)
 	var elm = document.getElementsByTagName('title')[0];
 	elm.innerHTML = title;
 }
+function back(){
+	PopUpHide();
+	window.history.back();
+	updateTitle(e.state.title);
+}
 
 window.addEventListener("popstate", function(e) {
 	PopUpHide();									 
