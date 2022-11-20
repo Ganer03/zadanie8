@@ -11,7 +11,6 @@ function followLink(event, link)
 {
 	PopUpShow();
 	var nameLink = link.innerHTML;
-	uploadContent(link.href);
 	window.history.pushState({title:nameLink}, null, "form");
 	updateTitle(nameLink);
 	event.preventDefault();
@@ -23,13 +22,7 @@ function updateTitle(title)
 	elm.innerHTML = title;
 }
 
-function uploadContent(link)
-{
-	//тут реализуем загрузку части страницы с помощью AJAX
-}
-
 window.addEventListener("popstate", function(e) {
-	PopUpHide();
-	uploadContent(e.state.href);									 
+	PopUpHide();									 
 	updateTitle(e.state.title);
 }, false );
