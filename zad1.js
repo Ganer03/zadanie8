@@ -1,4 +1,4 @@
-SaveLocalForm(){
+function SaveLocalForm(){
 	var inputEmail= document.getElementById("email");
 	var inputName= document.getElementById("name");
 	var inputTxtArea= document.getElementById("textarea");
