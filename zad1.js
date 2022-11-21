@@ -9,8 +9,8 @@ function SaveLocalForm(){
 
 $(document).ready(function(){
      if(localStorage.getItem("email")){
-	    document.getElementById("email").innerHTML=localStorage.getItem("email");
-	    document.getElementById("name").innerHTML=localStorage.getItem("name");
+	    document.getElementById("email").value=localStorage.getItem("email");
+	    document.getElementById("name").value=localStorage.getItem("name");
 	    document.getElementById("textarea").innerHTML=localStorage.getItem("textarea");
 	    document.getElementById('checkbox').checked = true;
     }
