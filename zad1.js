@@ -53,7 +53,7 @@ $.ajax({
     url: href,
     data: $(this).serialize(),
     success: function(response){
-	if(($('#name').val().length != 0 || $('#name').val().trim()) && $('#textarea').val().length != 0 && input[type="checkbox"].is(':checked') && response.status == "success"){
+	if($('#name').val().length != 0  && $('#textarea').val().length != 0 && input[type="checkbox"].is(':checked') && response.status == "success"){
 		document.getElementById('name').value='';
 		document.getElementById('email').value='';
 		document.getElementById('textarea').value='';
